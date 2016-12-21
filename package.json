@@ -1,0 +1,14 @@
+{
+  "name": "postgres_tut",
+  "version": "1.0.0",
+  "description": "tiny lib to try and understand postgrtes basic commands",
+  "main": "index.js",
+  "repository": "https://github.com/victusfate/postgres_tut.git",
+  "author": "victusfate",
+  "license": "MIT",
+  "dependencies": {
+    "pg": "^6.1.2",
+    "pg-pool": "^1.6.0",
+    "pg-promise": "^5.5.0"
+  }
+}
