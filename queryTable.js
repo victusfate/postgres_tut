@@ -7,14 +7,23 @@ const config = {
   // password: 'secret', //env var: PGPASSWORD
   host: 'localhost', // Server hosting the postgres database
   port: 5432, //env var: PGPORT
-  max: 10, // max number of clients in the pool
+  max: 20, // max number of clients in the pool
   idleTimeoutMillis: 30000, // how long a client is allowed to remain idle before being closed
 };
 
 //this initializes a connection pool
 //it will keep idle connections open for a 30 seconds
 //and set a limit of maximum 10 idle clients
+
+
 const pool = new Pool();
+
+// both native versions require promisfying
+// const nativeClient  = require('pg').native.Client
+// const pool          = new Pool({ Client: NativeClient })
+
+// const PgNativeClient  = require('pg-native')
+// const pool            = new Pool({ Client: PgNativeClient })
 
 pool.on('error', function (err, client) {
   // if an error is encountered by a client while it sits idle in the pool
